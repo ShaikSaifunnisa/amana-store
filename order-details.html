@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order details · Grove Store</title>
+<meta name="description" content="Grove Store: everyday things, well made. Live order tracking and easy cancellation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%2317402f'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23f2b138'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main">
+<div class="wrap" id="order-root" style="padding-top:1.5rem"><div class="skeleton" style="min-height:300px"></div></div>
+<dialog id="cancel-dlg"><form method="dialog" class="dlg" id="cancel-form">
+  <h2 style="font-size:1.4rem">Cancel this order?</h2>
+  <p class="muted">The order stays in your history marked as cancelled. Items go back into stock and any payment is flagged for refund.</p>
+  <div class="field"><label for="reason">Reason</label><select id="reason-select"><option>Changed my mind</option><option>Ordered by mistake</option><option>Found a better price</option><option>Delivery is taking too long</option><option value="other">Other</option></select></div>
+  <div class="field" id="other-wrap" hidden><label for="reason">Tell us more</label><input id="reason" maxlength="300"></div>
+  <div class="row" style="justify-content:flex-end"><button class="btn ghost" value="close" id="cancel-close">Keep order</button><button class="btn danger" id="cancel-confirm" type="button">Cancel order</button></div>
+</form></dialog>
+</main>
+<footer id="site-footer"></footer>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/order-details.js"></script>
+</body>
+</html>
