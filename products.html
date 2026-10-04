@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop · Grove Store</title>
+<meta name="description" content="Grove Store: everyday things, well made. Live order tracking and easy cancellation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%2317402f'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23f2b138'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main">
+<div class="wrap shop-layout">
+  <aside class="filters" aria-label="Filters"><div class="card">
+    <h3>Category</h3><div id="cat-list" style="margin-bottom:1.25rem"></div>
+    <h3>Price</h3>
+    <div class="row" style="flex-wrap:nowrap;margin-bottom:1rem"><input type="number" id="min" min="0" placeholder="Min" aria-label="Minimum price"><input type="number" id="max" min="0" placeholder="Max" aria-label="Maximum price"></div>
+    <label class="row" style="font-weight:500"><input type="checkbox" id="instock" style="width:auto"> In stock only</label>
+    <div class="row" style="margin-top:1rem"><button class="btn sm" id="apply">Apply</button><button class="btn ghost sm" id="reset">Reset</button></div>
+  </div></aside>
+  <section>
+    <div class="toolbar"><div><h2 id="shop-title" style="margin:0">All products</h2><span class="muted small" id="shop-count"></span></div>
+      <label class="row small" style="margin:0">Sort by <select id="sort"><option value="newest">Newest</option><option value="price_asc">Price: low to high</option><option value="price_desc">Price: high to low</option><option value="rating">Top rated</option></select></label></div>
+    <div class="product-grid" id="grid"></div>
+    <div class="pager" id="pager"></div>
+  </section>
+</div>
+</main>
+<footer id="site-footer"></footer>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/products.js"></script>
+</body>
+</html>
